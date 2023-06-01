@@ -1,14 +1,21 @@
 # Project
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+Windows natively utilizes many HID controls, exposing hardware integration-points to enhance user-experience.  While HID is a well-understood industry standard, the great flexibility of HID Report descriptors introduces complexity for the consumer (e.g. Applications, Hosts) to parse and support, so only a subset of what HIDs can describe may be supported (with great variance amongst consumers).  The inevitability of errors/deviations in shipped device/consumer implementations from the HID-spec and the need to maintain backwards compatibility, further reduce what can be usefully described.
 
-As the maintainer of this project, please make a few updates:
+This project provides reference-implementations of HIDs that Windows natively consumes as hardware integration-points (e.g. Shell-interaction, Application-WindowMessages, UserMode APIs).  (*Note: 3rd-Party applications are naturally not limited to only what Windows natively consumes*).  References document (inline) any Windows expectations/limitations/work-arounds, and generally why things are the way they are.
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+> References are intended to be used as a starting-point for 3rd-Party HID vendors, and to be consumed as-is by hobbyists.
+
+Caveats
+- Untested on non-Windows systems (e.g. macOS, Linux, etc…)
+- Comprehension/simplicity was always chosen over efficiency  (e.g. multiple Reports used, where one would be sufficient).  See [HID-spec](https://usb.org/document-library/device-class-definition-hid-111) for rolling-your-own Report Descriptor.
+- A subset of HID Report Descriptor variations within the HID-spec are naturally supported, but likely not all.
+- Documented expectations/work-arounds may change at any time, and do not guarantee compatibility.
+  - Last Validated on Windows 11 (22621.1702) (`22621.1.amd64fre.ni_release.220506-1250`)
+
+## Supported Devices
+
+- Consumer Control  (see `Microsoft_HidConsumerControl.h`)
 
 ## Contributing
 

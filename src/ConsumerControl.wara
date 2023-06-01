@@ -1,0 +1,140 @@
+[[settings]]
+generateCpp = true
+cppDescriptorName = "ConsumerControlReportDescriptor"
+
+[[applicationCollection]]
+usage = ['Consumer', 'Consumer Control']
+
+    [[applicationCollection.inputReport]]
+    name = "VolumeIncrementReport"
+
+        # RTC
+        [[applicationCollection.inputReport.variableItem]]
+        usage = ['Consumer', 'Volume Increment']
+        logicalValueRange = [0, 1]
+
+    [[applicationCollection.inputReport]]
+    name = "VolumeDecrementReport"
+
+        # RTC
+        [[applicationCollection.inputReport.variableItem]]
+        usage = ['Consumer', 'Volume Decrement']
+        logicalValueRange = [0, 1]
+
+    [[applicationCollection.inputReport]]
+    name = "VolumeReport"
+
+        # LC
+        # Windows-Shell has a bug where (for the Usage Volume[224]) the standard LC LogicalMin/Max of -1, +1, causes valid
+        # values (-1, +1) to always be interpreted as 'some' -ve value; never +ve.
+        # Solution here is to have LogicalMin/Max as -1, +2; where the device sends +2 (for -ve value) and +1 (for +ve value).
+        [[applicationCollection.inputReport.variableItem]]
+        usage = ['Consumer', 'Volume']
+        logicalValueRange = [-1, 2]
+
+    [[applicationCollection.inputReport]]
+    name = "DisplayBrightnessIncrementReport"
+
+        # RTC
+        [[applicationCollection.inputReport.variableItem]]
+        usage = ['Consumer', 'Display Brightness Increment']
+        logicalValueRange = [0, 1]
+
+    [[applicationCollection.inputReport]]
+    name = "DisplayBrightnessDecrementReport"
+
+        # RTC
+        [[applicationCollection.inputReport.variableItem]]
+        usage = ['Consumer', 'Display Brightness Decrement']
+        logicalValueRange = [0, 1]
+
+    [[applicationCollection.inputReport]]
+    name = "GamebarReport"
+
+        # Sel controls
+        [[applicationCollection.inputReport.arrayItem]]
+        usageRange = ['Consumer', 'Invoke Capture Interface', 'Capture Game Screenshot']
+
+    # While AL* Usages are Sels (and so should be placed within the NAry 'Application Launch Buttons'), Windows-Shell won't parse them correctly.
+    # So these Usages cannot be placed within an NAry-LogicalCollection.
+    [[applicationCollection.inputReport]]
+    name = "ApplicationLaunchReport"
+
+        # Sel controls
+        [[applicationCollection.inputReport.arrayItem]]
+        usages = [ ['Consumer', 'AL Email Reader'], 
+            ['Consumer', 'AL Calculator'], 
+            ['Consumer', 'AL Local Machine Browser'], 
+            ['Consumer', 'AL Consumer Control Configuration'] ]
+
+    # While AC* Usages are Sels (and so should be placed within the NAry 'Generic GUI Application Controls'), Windows-Shell won't parse them correctly.
+    # So these Usages cannot be placed within an NAry-LogicalCollection.
+    [[applicationCollection.inputReport]]
+    name = "ApplicationControlReport"
+
+        # Sel controls
+        [[applicationCollection.inputReport.arrayItem]]
+        usages = [ ['Consumer', 'AC Search'], 
+            ['Consumer', 'AC Home'], 
+            ['Consumer', 'AC Stop'], 
+            ['Consumer', 'AC Refresh'] ]
+
+    [[applicationCollection.inputReport]]
+    name = "NavigateBackwardsReport"
+
+        # RTC
+        [[applicationCollection.inputReport.variableItem]]
+        usage = ['Consumer', 'AC Back']
+        logicalValueRange = [0, 1]
+
+    [[applicationCollection.inputReport]]
+    name = "NavigateForwardsReport"
+
+        # RTC
+        [[applicationCollection.inputReport.variableItem]]
+        usage = ['Consumer', 'AC Forward']
+        logicalValueRange = [0, 1]
+
+    [[applicationCollection.inputReport]]
+    name = "ScanPreviousTrackReport"
+
+        # RTC
+        [[applicationCollection.inputReport.variableItem]]
+        usage = ['Consumer', 'Scan Previous Track']
+        logicalValueRange = [0, 1]
+
+    [[applicationCollection.inputReport]]
+    name = "ScanNextTrackReport"
+
+        # RTC
+        [[applicationCollection.inputReport.variableItem]]
+        usage = ['Consumer', 'Scan Next Track']
+        logicalValueRange = [0, 1]
+
+    [[applicationCollection.inputReport]]
+    name = "PlayReport"
+
+        [[applicationCollection.inputReport.variableItem]]
+        usage = ['Consumer', 'Play']
+        logicalValueRange = [0, 1]
+
+    [[applicationCollection.inputReport]]
+    name = "PauseReport"
+
+        [[applicationCollection.inputReport.variableItem]]
+        usage = ['Consumer', 'Pause']
+        logicalValueRange = [0, 1]
+
+    [[applicationCollection.inputReport]]
+    name = "PlayPauseReport"
+
+        [[applicationCollection.inputReport.variableItem]]
+        usage = ['Consumer', 'Play/Pause']
+        logicalValueRange = [0, 1]
+
+    [[applicationCollection.inputReport]]
+    name = "MuteReport"
+
+        [[applicationCollection.inputReport.variableItem]]
+        usage = ['Consumer', 'Mute']
+        logicalValueRange = [0, 1]
