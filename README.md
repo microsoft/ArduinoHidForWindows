@@ -6,16 +6,16 @@ This project provides reference-implementations of HIDs that Windows natively co
 
 > References are intended to be used as a starting-point for 3rd-Party HID vendors, and to be consumed as-is by hobbyists.
 
-Caveats
+## Supported Devices
+
+- Consumer Control  (see `Microsoft_HidConsumerControl.h`)
+
+## Caveats
 - Untested on non-Windows systems (e.g. macOS, Linux, etc…)
 - Comprehension/simplicity was always chosen over efficiency  (e.g. multiple Reports used, where one would be sufficient).  See [HID-spec](https://usb.org/document-library/device-class-definition-hid-111) for rolling-your-own Report Descriptor.
 - A subset of HID Report Descriptor variations within the HID-spec are naturally supported, but likely not all.
 - Documented expectations/work-arounds may change at any time, and do not guarantee compatibility.
   - Last Validated on Windows 11 (22621.1702) (`22621.1.amd64fre.ni_release.220506-1250`)
-
-## Supported Devices
-
-- Consumer Control  (see `Microsoft_HidConsumerControl.h`)
 
 ## Contributing
 
