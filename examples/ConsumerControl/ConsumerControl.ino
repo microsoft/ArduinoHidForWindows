@@ -15,7 +15,7 @@ Microsoft_MomentarySwitch momentarySwitch1(MOMENTARY_SWITCH_PIN, LOW);
 Microsoft_Potentiometer potentiometer1(POTENTIOMETER_PIN, 10, false);
 
 // TODO: Modify this variable to be 1, 2, 3, to invoke the appropriate sample below.
-const int sample = 3;
+const int sample = 1;
 
 void setup()
 {
