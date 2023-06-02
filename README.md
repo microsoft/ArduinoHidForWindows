@@ -6,6 +6,8 @@ This project provides reference-implementations of HIDs that Windows natively co
 
 > References are intended to be used as a starting-point for 3rd-Party HID vendors, and to be consumed as-is by hobbyists.
 
+See also the [Waratah project](https://github.com/microsoft/hidtools) for HID Descriptor composition.
+
 ## Supported Devices
 
 - Consumer Control  (see `Microsoft_HidConsumerControl.h`)
