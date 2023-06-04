@@ -212,6 +212,18 @@ void Microsoft_HidConsumerControl::togglePlayPause() noexcept
     SendInputReport(&report, sizeof(PlayPauseReport));
 }
 
+void Microsoft_HidConsumerControl::toggleCameraAccess() noexcept
+{
+    CameraAccessToggleReport report = {};
+
+    report.Payload[0] = 1;
+    SendInputReport(&report, sizeof(CameraAccessToggleReport));
+
+    // Must reset state.
+    report.Payload[0] = 0;
+    SendInputReport(&report, sizeof(CameraAccessToggleReport));
+}
+
 void Microsoft_HidConsumerControl::toggleOpenGamebar() noexcept
 {
     GamebarReport report = {};

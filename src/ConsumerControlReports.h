@@ -128,4 +128,10 @@ struct MuteReport
     uint8_t Payload[1];
 };
 
+struct CameraAccessToggleReport
+{
+    uint8_t ReportId = 17;
+    uint8_t Payload[1];
+};
+
 #pragma pack(pop)

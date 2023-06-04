@@ -27,6 +27,7 @@ stopScanNextTrack                   KEYWORD2
 play                                KEYWORD2
 pause                               KEYWORD2
 togglePlayPause                     KEYWORD2
+toggleCameraAccess                  KEYWORD2
 toggleOpenGamebar                   KEYWORD2
 toggleGameRecording                 KEYWORD2
 saveBackgroundGameRecordingClip     KEYWORD2

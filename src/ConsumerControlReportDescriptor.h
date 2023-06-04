@@ -161,5 +161,11 @@ static const uint8_t ConsumerControlReportDescriptor[] PROGMEM =
     0x81, 0x02,          //     Input(Data, Variable, Absolute, NoWrap, Linear, PreferredState, NoNullPosition, BitField)
     0x75, 0x07,          //     ReportSize(7)
     0x81, 0x03,          //     Input(Constant, Variable, Absolute, NoWrap, Linear, PreferredState, NoNullPosition, BitField)
+    0x85, 0x11,          //     ReportId(17)
+    0x09, 0x78,          //     UsageId(Camera Access Toggle[0x0078])
+    0x75, 0x01,          //     ReportSize(1)
+    0x81, 0x02,          //     Input(Data, Variable, Absolute, NoWrap, Linear, PreferredState, NoNullPosition, BitField)
+    0x75, 0x07,          //     ReportSize(7)
+    0x81, 0x03,          //     Input(Constant, Variable, Absolute, NoWrap, Linear, PreferredState, NoNullPosition, BitField)
     0xC0,                // EndCollection()
 };

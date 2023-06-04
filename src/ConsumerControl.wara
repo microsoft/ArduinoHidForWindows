@@ -138,3 +138,10 @@ usage = ['Consumer', 'Consumer Control']
         [[applicationCollection.inputReport.variableItem]]
         usage = ['Consumer', 'Mute']
         logicalValueRange = [0, 1]
+
+    [[applicationCollection.inputReport]]
+    name = "CameraAccessToggleReport"
+
+        [[applicationCollection.inputReport.variableItem]]
+        usage = ['Consumer', 'Camera Access Toggle']
+        logicalValueRange = [0, 1]

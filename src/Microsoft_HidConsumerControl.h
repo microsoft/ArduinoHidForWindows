@@ -97,6 +97,10 @@ public:
     // For (legacy) 'Windows Media Player', this functions as a play/pause toggle.
     void togglePlayPause() noexcept;
 
+    // Toggles whether system and applications have access to webcams.
+    // When disabled, no application can access the camera.
+    void toggleCameraAccess() noexcept;
+
     // Opens/closes the Gamebar.
     void toggleOpenGamebar() noexcept;
 
