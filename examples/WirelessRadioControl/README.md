@@ -1,19 +1,17 @@
 # Background
-ConsumerControl devices typically provide application-specific control of the foreground-application, where applications are expected to open/read from the HID directly. Over the years, many of these have been incorporated as system-wide settings , or automatically-translated to WindowMessages/VirtualKeys (of the foreground-application) for developer convenience.
+A 'Wireless Radio Control' device allows enabling/disable all wireless radios (e.g. WIFI, Bluetooth, Celluar) on a system.
 
-Windows has supported ConsumerControl devices since before Windows XP.
-
-[ConsumerControl HID Usages](https://usb.org/sites/default/files/hut1_4.pdf#page=126) describe the underlying interaction between Host and Device.  This interaction is implemented by `Microsoft_HidConsumerControl`
+[Wireless Radio Controls HID Usages](https://usb.org/sites/default/files/hut1_4.pdf#page=53) describe the underlying interaction between Host and Device.  This interaction is implemented by `Microsoft_HidWirelessRadioControl`
 
 # Building Sample Device
-This section describes the hardware components (constituting the end-device) used for this sample.  Other configurations may require changes to the sample code to integrate with alternate switches/potentiometers or development-platform.
+This section describes the hardware components (constituting the end-device) used for this sample.  Other configurations may require changes to the sample code to integrate with alternate switches/LEDs or development-platform.
 
-<img src="./docs/ArduinoWithSensorKit.jpg" alt="ConsumerControl assembled" width="427"/>
+<img src="./docs/ArduinoWithSensorKit.jpg" alt="Wireless Radio Control assembled" width="427"/>
 
 ## Design
 Arduino (with Seeed Studio) has released a collection of simple IO and sensor devices (as a shield), packaged as the [Arduino Sensor Kit](https://store.arduino.cc/products/arduino-sensor-kit-base).  Of concern here are the:-
 - Momentary switch (Digital PIN4)
-- Rotary Potentiometer (Analog PIN0).
+- LED (Digital PIN6)
 
 There are many other sources and methods to attach these components, but require additional components (e.g. resistors), so for simplicitly of this sample, this shield was chosen.
 

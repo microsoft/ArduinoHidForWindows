@@ -130,23 +130,27 @@ bool Microsoft_HidDevice::setup(USBSetup& setup)
                 }
                 case HidReportRequestKind::SetReport:
                 {
-                    uint16_t reportlength = setup.wLength;
+                    uint16_t reportLength = setup.wLength;
                     uint8_t reportId = setup.wValueL;
-                    uint8_t* report = (uint8_t*)malloc(reportlength);
+                    uint8_t* report = (uint8_t*)malloc(reportLength);
 
-                    USBDevice.recvControl(report, reportlength);
+                    USBDevice.recvControl(report, reportLength);
 
                     HidReportType reportType = (HidReportType)setup.wValueH;
                     switch (reportType)
                     {
                         case HidReportType::Feature:
                         {
-                            ProcessReceivedSetFeatureReport(reportId, report, reportlength);
+                            ProcessReceivedSetFeatureReport(reportId, report, reportLength);
 
                             // Upon receipt of a Feature-Report, (during DATA transaction phase of SETUP/DATA/STATUS),
                             // IN-buffer must be set to zero-length, so 0 bytes are sent back for DATA1 packet.
                             // See Pg771 of the Atmel SAMD data sheet (Management of IN Transactions)
                             USBDevice.sendZlp(0);
+                        }
+                        case HidReportType::Output:
+                        {
+                            ProcessReceivedOutputReport(reportId, report, reportLength);
                         }
                     }
 
@@ -178,5 +182,9 @@ void Microsoft_HidDevice::ProcessReceivedGetFeatureReport(uint8_t reportId) noex
 }
 
 void Microsoft_HidDevice::ProcessReceivedSetFeatureReport(uint8_t reportId, uint8_t* data, uint16_t length) noexcept
+{
+}
+
+void Microsoft_HidDevice::ProcessReceivedOutputReport(uint8_t reportId, uint8_t* data, uint16_t length) noexcept
 {
 }

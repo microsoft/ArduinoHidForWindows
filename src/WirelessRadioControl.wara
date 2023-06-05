@@ -1,0 +1,27 @@
+[[settings]]
+generateCpp = true
+cppDescriptorName = "WirelessRadioControlDescriptor"
+
+[[applicationCollection]]
+usage = ['Generic Desktop', 'Wireless Radio Controls']
+
+    [[applicationCollection.inputReport]]
+    name = "WirelessRadioToggleButtonReport"
+
+        [[applicationCollection.inputReport.variableItem]]
+        usage = ['Generic Desktop', 'Wireless Radio Button']
+        logicalValueRange = [0, 1]
+
+    [[applicationCollection.inputReport]]
+    name = "WirelessRadioSliderReport"
+
+        [[applicationCollection.inputReport.variableItem]]
+        usage = ['Generic Desktop', 'Wireless Radio Slider Switch']
+        logicalValueRange = [0, 1]
+
+    [[applicationCollection.outputReport]]
+    name = "WirelessRadioLedReport"
+
+        [[applicationCollection.outputReport.variableItem]]
+        usage = ['Generic Desktop', 'Wireless Radio LED']
+        logicalValueRange = [0, 1]

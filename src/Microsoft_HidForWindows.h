@@ -4,5 +4,8 @@
 #pragma once
 
 #include <Microsoft_HidConsumerControl.h>
+#include <Microsoft_HidWirelessRadioControl.h>
+
+#include <Microsoft_Led.h>
 #include <Microsoft_MomentarySwitch.h>
 #include <Microsoft_Potentiometer.h>

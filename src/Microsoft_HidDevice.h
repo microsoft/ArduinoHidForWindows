@@ -32,6 +32,10 @@ protected:
     // Default behaviour is to drop the report.
     virtual void ProcessReceivedSetFeatureReport(uint8_t reportId, uint8_t* data, uint16_t length);
 
+    // Invoked when an Output report is received.
+    // Default behaviour is to drop the report.
+    virtual void ProcessReceivedOutputReport(uint8_t reportId, uint8_t* data, uint16_t length);
+
     //
     // PluggableUSBModule interface
     //
