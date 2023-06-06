@@ -11,6 +11,7 @@ See also the [Waratah project](https://github.com/microsoft/hidtools) for HID De
 ## Supported Devices
 
 - Consumer Control  (see `Microsoft_HidConsumerControl.h`)
+- LampArray (see `Microsoft_HidLampArray.h`)
 - Wireless Radio Control (see `Microsoft_HidWirelessRadioControl.h`)
 
 ## Caveats

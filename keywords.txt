@@ -44,6 +44,8 @@ invokeApplicationSpecificSearch     KEYWORD2
 invokeApplicationSpecificHome       KEYWORD2
 invokeApplicationSpecificStop       KEYWORD2
 invokeApplicationSpecificRefresh    KEYWORD2
+Microsoft_HidLampArray              KEYWORD1
+getCurrentState                     KEYWORD2
 Microsoft_HidWirelessRadioControl   KEYWORD1
 getCurrentState                     KEYWORD2
 toggleAirplaneMode                  KEYWORD2

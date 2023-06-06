@@ -4,6 +4,7 @@
 #pragma once
 
 #include <Microsoft_HidConsumerControl.h>
+#include <Microsoft_HidLampArray.h>
 #include <Microsoft_HidWirelessRadioControl.h>
 
 #include <Microsoft_Led.h>
