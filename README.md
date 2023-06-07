@@ -12,8 +12,11 @@ See also the [Waratah project](https://github.com/microsoft/hidtools) for HID De
 
 ## Supported Devices
 
+> Additional devices will be continually added over the coming months.  To make suggestions for the next device-type, please file an issue.
+
 - Consumer Control  (see `Microsoft_HidConsumerControl.h`)
 - LampArray (see `Microsoft_HidLampArray.h`)
+  - New support in Windows as part of [Dynamic Lighting](https://blogs.windows.com/windows-insider/2023/06/07/announcing-windows-11-insider-preview-build-23475/)
 - Wireless Radio Control (see `Microsoft_HidWirelessRadioControl.h`)
 
 ## Caveats
