@@ -3,6 +3,8 @@ LampArray devices have one or more Lamps (e.g. lights/LEDs/bulbs, etc…) whose 
 
 Windows has supported LampArray manipulation since Windows 10 1809 (build 17763), via the [Windows.Devices.Lights](https://learn.microsoft.com/en-us/uwp/api/windows.devices.lights.lamparray), [Windows.Devices.Lights.Effects](https://learn.microsoft.com/en-us/uwp/api/windows.devices.lights.effects) UWP APIs.
 
+See `Windows 11 Insider Preview Build 23475` for new [Dynamic Lighting](https://blogs.windows.com/windows-insider/2023/06/07/announcing-windows-11-insider-preview-build-23475/) scenarios for LampArrays.
+
 [LampArray HID Usages](https://usb.org/sites/default/files/hut1_4.pdf#page=329) describe the underlying interaction between Host and Device.  This interaction is implemented by `Microsoft_HidLampArray`
 
 # Sample Device Demo
