@@ -6,7 +6,7 @@ This project provides reference-implementations of HIDs that Windows natively co
 
 > References are intended to be used as a starting-point for 3rd-Party HID vendors, and to be consumed as-is by hobbyists.
 
-> This project is available as a library via the [Arduino Package Manager](https://docs.arduino.cc/software/ide-v2/tutorials/ide-v2-installing-a-library).  Search for `Microsoft_HidForWindows`.
+> This project is available as a library via the [Arduino Package Manager](https://reference.arduino.cc/reference/en/libraries/microsoft_hidforwindows/).  Search for `Microsoft_HidForWindows`.
 
 See also the [Waratah project](https://github.com/microsoft/hidtools) for HID Descriptor composition.
 
