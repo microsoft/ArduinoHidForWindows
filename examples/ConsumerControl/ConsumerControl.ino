@@ -9,10 +9,10 @@ const int MOMENTARY_SWITCH_PIN = 4;
 // The potentiometer on the 'Arduino Sensor Kit' is (by default) on Analog-PIN0.
 const int POTENTIOMETER_PIN = 0;
 
-Microsoft_HidConsumerControl consumerControl = Microsoft_HidConsumerControl();
-
 Microsoft_MomentarySwitch momentarySwitch1(MOMENTARY_SWITCH_PIN, LOW);
 Microsoft_Potentiometer potentiometer1(POTENTIOMETER_PIN, 10, false);
+
+Microsoft_HidConsumerControl consumerControl = Microsoft_HidConsumerControl();
 
 // TODO: Modify this variable to be 1, 2, 3, to invoke the appropriate sample below.
 const int sample = 1;

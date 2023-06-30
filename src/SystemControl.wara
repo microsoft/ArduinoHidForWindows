@@ -1,0 +1,13 @@
+[[settings]]
+generateCpp = true
+cppDescriptorName = "SystemControlDescriptor"
+
+[[applicationCollection]]
+usage = ['Generic Desktop', 'System Control']
+
+    [[applicationCollection.inputReport]]
+    name = "SystemControlPowerReport"
+
+        [[applicationCollection.inputReport.variableItem]]
+        usageRange = ['Generic Desktop', 'System Power Down', 'System Sleep']
+        logicalValueRange = [0, 1]

@@ -142,17 +142,17 @@ bool Microsoft_HidDevice::setup(USBSetup& setup)
                         case HidReportType::Feature:
                         {
                             ProcessReceivedSetFeatureReport(reportId, report, reportLength);
-
-                            // Upon receipt of a Feature-Report, (during DATA transaction phase of SETUP/DATA/STATUS),
-                            // IN-buffer must be set to zero-length, so 0 bytes are sent back for DATA1 packet.
-                            // See Pg771 of the Atmel SAMD data sheet (Management of IN Transactions)
-                            USBDevice.sendZlp(0);
                         }
                         case HidReportType::Output:
                         {
                             ProcessReceivedOutputReport(reportId, report, reportLength);
                         }
                     }
+
+                    // Upon receipt of a Feature-Report/Output-Report, (during DATA transaction phase of SETUP/DATA/STATUS),
+                    // IN-buffer must be set to zero-length, so 0 bytes are sent back for DATA1 packet.
+                    // See Pg771 of the Atmel SAMD data sheet (Management of IN Transactions)
+                    USBDevice.sendZlp(0);
 
                     free(report);
 
@@ -179,12 +179,18 @@ void Microsoft_HidDevice::SendInputReport(const void* reportWithId, size_t repor
 
 void Microsoft_HidDevice::ProcessReceivedGetFeatureReport(uint8_t reportId) noexcept
 {
+    // By default, drop the report.
+    // Subclass expected to override if supported by device.
 }
 
 void Microsoft_HidDevice::ProcessReceivedSetFeatureReport(uint8_t reportId, uint8_t* data, uint16_t length) noexcept
 {
+    // By default, drop the report.
+    // Subclass expected to override if supported by device.
 }
 
 void Microsoft_HidDevice::ProcessReceivedOutputReport(uint8_t reportId, uint8_t* data, uint16_t length) noexcept
 {
+    // By default, drop the report.
+    // Subclass expected to override if supported by device.
 }

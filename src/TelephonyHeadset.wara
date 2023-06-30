@@ -1,0 +1,88 @@
+[[settings]]
+generateCpp = true
+cppDescriptorName = "TelephonyHeadsetDescriptor"
+
+[[applicationCollection]]
+usage = ['Telephony Device', 'Headset']
+
+    [[applicationCollection.inputReport]]
+    name = "TelephonyHeadsetHookSwitchReport"
+
+        [[applicationCollection.inputReport.variableItem]]
+        usage = ['Telephony Device', 'Hook Switch']
+        logicalValueRange = [0, 1]
+
+    [[applicationCollection.inputReport]]
+    name = "TelephonyHeadsetPhoneMuteReport"
+
+        [[applicationCollection.inputReport.variableItem]]
+        usage = ['Telephony Device', 'Phone Mute']
+        logicalValueRange = [0, 1]
+
+    [[applicationCollection.inputReport]]
+    name = "TelephonyHeadsetRedialReport"
+
+        [[applicationCollection.inputReport.variableItem]]
+        usage = ['Telephony Device', 'Redial']
+        logicalValueRange = [0, 1]
+
+    [[applicationCollection.inputReport]]
+    name = "TelephonyHeadsetFlashReport"
+
+        [[applicationCollection.inputReport.variableItem]]
+        usage = ['Telephony Device', 'Flash']
+        logicalValueRange = [0, 1]
+
+    [[applicationCollection.inputReport]]
+    name = "TelephonyHeadsetSendReport"
+
+        [[applicationCollection.inputReport.variableItem]]
+        usage = ['Telephony Device', 'Send']
+        logicalValueRange = [0, 1]
+
+    [[applicationCollection.inputReport]]
+    name = "TelephonyHeadsetDropReport"
+
+        [[applicationCollection.inputReport.variableItem]]
+        usage = ['Telephony Device', 'Drop']
+        logicalValueRange = [0, 1]
+
+    [[applicationCollection.inputReport]]
+    name = "TelephonyHeadsetKeyPadReport"
+
+        [[applicationCollection.inputReport.logicalCollection]]
+        usage = ['Telephony Device', 'Telephony Key Pad']
+
+            [[applicationCollection.inputReport.logicalCollection.arrayItem]]
+            usageRange = ['Telephony Device', 'Phone Key 0', 'Phone Key D']
+
+    [[applicationCollection.outputReport]]
+    name = "TelephonyHeadsetHoldLedReport"
+
+        [[applicationCollection.outputReport.variableItem]]
+        usage = ['LED', 'Hold']
+        logicalValueRange = [0, 1]
+
+    [[applicationCollection.outputReport]]
+    name = "TelephonyHeadsetOffHookLedReport"
+
+        [[applicationCollection.outputReport.variableItem]]
+        usage = ['LED', 'Off-Hook']
+        logicalValueRange = [0, 1]
+
+    [[applicationCollection.outputReport]]
+    name = "TelephonyHeadsetRingLedReport"
+
+        [[applicationCollection.outputReport.variableItem]]
+        usage = ['LED', 'Ring']
+        logicalValueRange = [0, 1]
+
+    [[applicationCollection.outputReport]]
+    name = "TelephonyHeadsetLineLedReport"
+
+        [[applicationCollection.outputReport.logicalCollection]]
+        usage = ['LED', 'Usage In Use Indicator']
+
+            [[applicationCollection.outputReport.logicalCollection.variableItem]]
+            usage = ['Telephony Device', 'Line']
+            logicalValueRange = [0, 1]
