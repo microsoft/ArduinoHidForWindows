@@ -22,7 +22,7 @@ See also the [Waratah project](https://github.com/microsoft/hidtools) for HID De
 - Wireless Radio Control (see `Microsoft_HidWirelessRadioControl.h`)
 
 ## Caveats
-- Untested on non-Windows systems (e.g. macOS, Linux, etc…)
+- Untested against non-Windows systems (e.g. macOS, Linux, etc…)
 - Comprehension/simplicity was always chosen over efficiency  (e.g. multiple Reports used, where one would be sufficient).  See [HID-spec](https://usb.org/document-library/device-class-definition-hid-111) and [Waratah](https://github.com/microsoft/hidtools) for rolling-your-own Report Descriptor.
 - A subset of HID Report Descriptor variations within the HID-spec are naturally supported, but likely not all.
 - Documented expectations/work-arounds may change at any time, and do not guarantee compatibility.
