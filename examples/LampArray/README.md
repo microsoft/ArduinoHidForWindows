@@ -1,23 +1,24 @@
 # Background
 LampArray devices have one or more Lamps (e.g. lights/LEDs/bulbs, etc…) whose color state can be directly manipulated by the Host (rather than utilizing pre-programmed effects). Static information (stored on the device) describe supported colors, geometric positions and intended purposes for each Lamp.  LampArrays can be found as part of composite devices (e.g. keyboard with RGB lighting) or as standalone.
 
-Windows has supported LampArray manipulation since Windows 10 1809 (build 17763), via the [Windows.Devices.Lights](https://learn.microsoft.com/en-us/uwp/api/windows.devices.lights.lamparray), [Windows.Devices.Lights.Effects](https://learn.microsoft.com/en-us/uwp/api/windows.devices.lights.effects) UWP APIs.
+Windows has supported LampArray manipulation since Windows 10 1809 (build 17763), via the [Windows.Devices.Lights](https://learn.microsoft.com/en-us/uwp/api/windows.devices.lights.lamparray), [Windows.Devices.Lights.Effects](https://learn.microsoft.com/en-us/uwp/api/windows.devices.lights.effects) UWP APIs. See [LampArray UWP Samples](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/LampArray), and for [Background Effect support](https://learn.microsoft.com/en-us/windows/uwp/devices-sensors/lighting-dynamic-lamparray?branch=main)
 
-See `Windows 11 Insider Preview Build 23475` for new [Dynamic Lighting](https://blogs.windows.com/windows-insider/2023/06/07/announcing-windows-11-insider-preview-build-23475/) scenarios for LampArrays.
+See `Windows 11 Build 23466 (Preview) and later` for new [Dynamic Lighting](https://blogs.windows.com/windowsexperience/2023/09/27/dynamic-lighting-is-now-available-on-windows-11/) scenarios for LampArrays.  See also list of [known 3rd-party support devices](https://learn.microsoft.com/en-us/windows-hardware/design/component-guidelines/dynamic-lighting-devices)
 
 [LampArray HID Usages](https://usb.org/sites/default/files/hut1_4.pdf#page=329) describe the underlying interaction between Host and Device.  This interaction is implemented by `Microsoft_HidLampArray`
 
 # Sample Device Demo
 Sample device being driven by application running on Windows Host.
 
-*Note: The device with do nothing by itself, it requires the Host to send Lamp state.*
+*Note: The device with do nothing by itself, it requires the Host to send Lamp state.*  See [LampArray UWP Sample](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/LampArray), or native Windows 11 support for background effects.
 
 <img src="./docs/LampArrayActive.gif" alt="LampArray with animation"/>
 
 # Building Sample Device
 This section describes the hardware components (constituting the end-device) used for this sample.  Other configurations may require changes to the sample code to integrate with an alternate light-source or development-platform.
 
-*Note: The device with do nothing by itself, it requires the Host to send Lamp state.*
+*Note: The device with do nothing by itself, it requires the Host to send Lamp state.*  See [LampArray UWP Sample](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/LampArray), or native Windows 11 support for background effects.
+
 
 <img src="./docs/LampArraySampleDeviceAssembled.jpg" alt="LampArray assembled" width="427"/>
 
