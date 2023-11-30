@@ -2,7 +2,7 @@
 // Licensed under the MIT License.
 
 #include <Microsoft_HidForWindows.h>
-#include <Adafruit_NeoPixel.h>
+#include <FastLED.h>
 
 //
 // Adafruit NeoPixel-Shield - 40 RGB/W - https://www.adafruit.com/product/3053
@@ -16,11 +16,7 @@
 // NeoPixel-Shield has 40 neopixels
 #define NEO_PIXEL_LAMP_COUNT 40
 
-// NeoPixel-Shield (as used) is GRBW.
-// Note: This must be determined for each NeoPixel-Shield used.
-#define NEO_PIXEL_TYPE (NEO_GRBW + NEO_KHZ800)
-
-Adafruit_NeoPixel neoPixelShield = Adafruit_NeoPixel(NEO_PIXEL_LAMP_COUNT, NEO_PIXEL_PIN, NEO_PIXEL_TYPE);
+CRGB leds[NEO_PIXEL_LAMP_COUNT];
 
 // UpdateLatency for all Lamps set to 4msec as it just seems reasonable.
 #define NEO_PIXEL_LAMP_UPDATE_LATENCY (0x04)
@@ -80,17 +76,17 @@ static_assert(((sizeof(neoPixelShieldLampAttributes) / sizeof(LampAttributes)) =
 Microsoft_HidLampArray lampArray = Microsoft_HidLampArray(NEO_PIXEL_LAMP_COUNT, 70, 55, 1, LampArrayKindPeripheral, 33, neoPixelShieldLampAttributes);
 
 // When the LampArray is in Autonomous-Mode, displays solid blue.
-uint32_t lampArrayAutonomousColor = neoPixelShield.Color(0, 0, 1);
+#define lampArrayAutonomousColor CRGB(0, 0, 1)
 
 void setup()
 {
-    // Initialize the NeoPixel library.
-    neoPixelShield.begin();
-    neoPixelShield.clear();
+    // Initialize the FastLED library.
+    // https://github.com/FastLED/FastLED/wiki/Chipset-reference
+    FastLED.addLeds<NEOPIXEL, NEO_PIXEL_PIN>(leds, NEO_PIXEL_LAMP_COUNT);
+    FastLED.clear(true);
 
     // Always initially in Autonomous-Mode.
-    neoPixelShield.fill(lampArrayAutonomousColor, 0, NEO_PIXEL_LAMP_COUNT - 1);
-    neoPixelShield.show();
+    FastLED.showColor(lampArrayAutonomousColor);
 }
 
 void loop()
@@ -105,10 +101,10 @@ void loop()
         // Autonomous-Mode is the Host's mechanism to indicate to the device, that the device should decide what to render.
         // The Host may do this when no application is using the LampArray, so it has nothing to render.
         // In this case, this LampArray will revert to it's default/background effect, rendering 'blue'.
-        uint32_t newColor = isAutonomousMode ? lampArrayAutonomousColor : lampArrayColorToNeoPixelColor(currentLampArrayState[i]);
-        if (newColor != neoPixelShield.getPixelColor(i))
+        CRGB newColor = isAutonomousMode ? lampArrayAutonomousColor : CRGB(currentLampArrayState[i].RedChannel, currentLampArrayState[i].GreenChannel, currentLampArrayState[i].BlueChannel);
+        if (newColor != leds[i])
         {
-            neoPixelShield.setPixelColor(i, newColor);
+            leds[i] = newColor;
             update = true;
         }
     }
@@ -117,11 +113,6 @@ void loop()
     if (update)
     {
         // Send the updated pixel color to hardware.
-        neoPixelShield.show();
+        FastLED.show();
     }
-}
-
-uint32_t lampArrayColorToNeoPixelColor(LampArrayColor lampArrayColor)
-{
-    return neoPixelShield.Color(lampArrayColor.RedChannel, lampArrayColor.GreenChannel, lampArrayColor.BlueChannel);
 }
