@@ -27,6 +27,9 @@ See also the [Waratah project](https://github.com/microsoft/hidtools) for HID De
 - A subset of HID Report Descriptor variations within the HID-spec are naturally supported, but likely not all.
 - Documented expectations/work-arounds may change at any time, and do not guarantee compatibility.
   - Last Validated against Windows 11 (22621.1702) (`22621.1.amd64fre.ni_release.220506-1250`)
+- Validated with latest (1.8.13) SAMD Arduino Core (on Arduino Zero)
+  - Earlier versions may not have required USBCore fixes.
+- Samples do not work with Adafruit SAMD21 boards as the Adafruit fork of the SAMD Arduino Core isn't aligned with the official, which now contains several important fixes in USBCore regarding control-transfers and max-descriptor size.
 
 ## Contributing
 
