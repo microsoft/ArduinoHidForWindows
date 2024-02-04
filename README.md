@@ -12,7 +12,7 @@ See also the [Waratah project](https://github.com/microsoft/hidtools) for HID De
 
 ## Supported Devices
 
-> Additional devices will be continually added over the coming months.  To make suggestions for the next device-type, please file an issue.
+> Additional devices will be regularly considered.  To make suggestions for the next device-type, please file an issue.
 
 - Consumer Control  (see `Microsoft_HidConsumerControl.h`)
 - LampArray (see `Microsoft_HidLampArray.h`)
